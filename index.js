@@ -9,7 +9,6 @@
 const jwt = require('jsonwebtoken')
 const fs = require('fs')
 const privateKey = fs.readFileSync('./private.key');
-var secret = new Buffer(privateKey, "base64");
 const publicKey = fs.readFileSync('./public.key')
 
 const token = jwt.sign({ a: 'b' }, privateKey, { algorithm: 'RS256' })
